@@ -1,0 +1,70 @@
+
+  .oneUserContainer{
+    display: flex;
+    flex-direction: column;
+    background-color: #73d905;
+  }
+  .img_tip {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .contentTip {
+    flex-direction: column;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    background-color: aqua;
+  }
+  .name_content {
+    flex-direction: row;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 30%;
+  }
+  
+  .btn-tips {
+    border-radius: 5px;
+    width: 150px;
+    height: 40px;
+    border: 2px solid #73d905;
+    color: black;
+  }
+  
+  .btn-tips:hover {
+    background-color: #73d905;
+    color: white;
+  }
+  .Tip_btns {
+    flex-direction: row;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  
+    gap: 10px;
+  }
+  
+  .btn-tips-hide{
+    border-radius: 5px;
+    width: 150px;
+    height: 40px;
+    border: 2px solid red;
+    color: black;
+  }
+  .btn-tips-hide:hover{
+    background-color: red;
+    color: white;
+  }
+
+  .buttons{
+    width: 8%;
+  }
+
+  .lock{
+    color: #73d905;
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+  }
