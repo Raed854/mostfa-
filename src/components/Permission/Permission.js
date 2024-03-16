@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./permission.css"
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
+import axios from 'axios';
 
 
 const style = {
@@ -19,6 +20,32 @@ const style = {
   };
 
 const Permission = (props) => {
+  const [permission,setPermission] = useState({})
+
+
+  const fetchPermission = async (id) => {
+    try {
+      const data = await axios.get(`http://localhost:8000/miroir/api/user_autorisation/${id}/`)
+      setPermission(data.data)
+      console.log(data.data);
+    } catch (error) {
+      throw error
+    }
+  }
+
+  const handleUpdate = async ()=>{
+    try {
+      await axios.put(`http://localhost:8000/miroir/api/update_user_autorisation/${id}/`)
+    } catch (error) {
+      throw error 
+    }
+  }
+
+  useEffect(()=>{
+    fetchPermission(props.user.id)
+  },[])
+
+
   return (
     <div>
     <Modal

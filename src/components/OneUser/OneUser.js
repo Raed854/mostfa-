@@ -9,14 +9,14 @@ import { useNavigate } from 'react-router-dom';
 import Permission from '../Permission/Permission';
 
 const OneUser = (props) => {
+  const [details,setDetails] = useState({})
+  const navigate = useNavigate()
   const [block,setBlocked] = useState(props.user.is_active)
   const [openDelete,setOpenDelete] = React.useState(false);
   const [openPermission,setOpenPermission] = useState(false)
-  const [details,setDetails] = useState({})
-  const navigate = useNavigate()
+  const [open, setOpen] = React.useState(false);
 
   
-  const [open, setOpen] = React.useState(false);
   const handleOpenPermission = () => setOpenPermission(true)
   const handleClosePermission = () => setOpenPermission(false)
   const handleOpenUpdate = () => setOpen(true);
