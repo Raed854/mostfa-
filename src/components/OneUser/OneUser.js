@@ -25,7 +25,6 @@ const OneUser = (props) => {
   const handleCloseDelete = () => setOpenDelete(false);
   const handleUpdate= async (id,body)=>{
     try {
-      console.log(id);
       await axios.put(`http://localhost:8000/miroir/api/users/${id}/edit/`,body)
       props.setReload(!props.relaod)
       props.fetchUsers()
@@ -38,7 +37,6 @@ const OneUser = (props) => {
       const details = await axios.get(`http://localhost:8000/miroir/api/user_role_company/${id}/`)
       props.setReload(!props.relaod)
       props.fetchUsers()
-      console.log(details.data[0]);
       setDetails(details.data[0])
     } catch (error) {
       throw error
@@ -46,7 +44,6 @@ const OneUser = (props) => {
   }
   const handleDelete= async (id)=>{
     try {
-      console.log(id);
       await axios.delete(`http://localhost:8000/miroir/api/users/${id}/delete/`)
       props.setReload(!props.relaod)
       props.fetchUsers()

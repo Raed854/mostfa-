@@ -15,7 +15,6 @@ const UsersView = () => {
     const fetchUsers = async ()=>{
       const users = await dispatch(getAllUsers())
       setUsers(users.payload.reverse())
-      console.log(users.length);
     }
     useEffect(()=>{
       fetchUsers()

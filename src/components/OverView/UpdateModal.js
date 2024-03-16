@@ -36,7 +36,6 @@ const UpdateModal = (props) => {
     const handleDetails = async (id) =>{
       try {
         const details = await axios.get(`http://localhost:8000/miroir/api/user_role_company/${id}/`)
-        console.log(details.data[0]);
         setDetails(details.data[0])
         setCompany(details.data[0].company)
         setRole(details.data[0].role)
@@ -50,9 +49,7 @@ const UpdateModal = (props) => {
         formData.append("file",e.target.files[0])
         formData.append("upload_preset","oztadvnr")
         await axios.post("https://api.cloudinary.com/v1_1/dl4qexes8/upload",formData).then((response)=>{
-          console.log(response.data["secure_url"]);
           setImage(response.data["secure_url"])
-          console.log(date);
         
         }).catch((error)=>{
           throw error
