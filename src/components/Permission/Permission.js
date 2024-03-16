@@ -20,7 +20,8 @@ const style = {
   };
 
 const Permission = (props) => {
-  const [permission,setPermission] = useState({})
+  const [permission,setPermission] = useState([])
+  const [check,setCheck] = useState(true)
 
 
   const fetchPermission = async (id) => {
@@ -67,7 +68,7 @@ const Permission = (props) => {
                 <div className='form-right'>
                     <div className='form-right-left'>
                         <div className='checkbox'>
-                            <input type="checkbox" className="ui-checkbox"/>
+                            <input type="checkbox" className="ui-checkbox"  { ...check && true ? "checked" : ""} />
                             <p>Users</p>
                         </div>
                         <div className='checkbox'>
