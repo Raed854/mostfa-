@@ -33,7 +33,7 @@ const Permission = (props) => {
     }
   }
 
-  const handleUpdate = async ()=>{
+  const handleUpdate = async (id)=>{
     try {
       await axios.put(`http://localhost:8000/miroir/api/update_user_autorisation/${id}/`)
     } catch (error) {
@@ -114,7 +114,7 @@ const Permission = (props) => {
 
           <div className="modalButtons">
             <Button className="modalBtn" onClick={props.handleClose}>Cancel</Button>
-            <Button className="modalBtn" onClick="test()">Confirm</Button>
+            <Button className="modalBtn" >Confirm</Button>
           </div>
         </div>
       </Box>
