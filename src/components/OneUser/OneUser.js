@@ -139,7 +139,7 @@ const OneUser = (props) => {
 
     <UpdateModal open={open} handleCloseUpdate={handleCloseUpdate} user={props.user}  handleUpdate={handleUpdate} />
     <DeleteModal open={openDelete} handleClose={handleCloseDelete} user={props.user} handleDelete={handleDelete} />
-    <Permission open={openPermission} handleClose={handleClosePermission} user={props.user} autorisation={autorisation} />
+    <Permission open={openPermission} handleClose={handleClosePermission} user={props.user} permission={permission} />
   </tr>
    
   )
