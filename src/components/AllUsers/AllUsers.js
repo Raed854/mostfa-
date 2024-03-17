@@ -91,7 +91,7 @@ const AllUsers = (props) => {
         </thead>
         <tbody>
           {props.users.map((user, index) => {
-            fetchPermission(props.user.id);
+            fetchPermission(user.id);
             handlePermissions(user.id);
             return (
               <OneUser
