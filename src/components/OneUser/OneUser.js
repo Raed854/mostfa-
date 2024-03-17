@@ -125,12 +125,12 @@ const OneUser = (props) => {
     } else {
       obj.block = true;
     }
-    console.log(obj);
-    setAutorisation(obj);
+    return obj
   };
 
   useEffect(()=>{
     handleDetails(props.user.id)
+    setAutorisation(handlePermissions())
   },[props.relaod])
 
   return (
