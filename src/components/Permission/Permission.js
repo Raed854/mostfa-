@@ -68,7 +68,7 @@ const Permission = (props) => {
                 <div className='form-right'>
                     <div className='form-right-left'>
                         <div className='checkbox'>
-                            <input type="checkbox" className="ui-checkbox"  { ...check && true ? "checked" : ""} />
+                            <input type="checkbox" className="ui-checkbox" checked={check} />
                             <p>Users</p>
                         </div>
                         <div className='checkbox'>
