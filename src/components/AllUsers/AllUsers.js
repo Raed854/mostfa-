@@ -37,7 +37,6 @@ const AllUsers = (props) => {
                 setReload={props.setReload}
                 reload={props.reload}
                 fetchUsers={props.fetchUsers}
-                permission={permission}
               />
             );
           })}
