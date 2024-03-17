@@ -20,21 +20,76 @@ const style = {
   };
 
 const Permission = (props) => {
+  const [autorisation, setAutorisation] = useState({});
 
-  const [user,setUser] = useState(props.autorisation?.user)
-  const [role,setRole] = useState(props.autorisation?.role)
-  const [company,setCompany] = useState(props.autorisation?.company)
-  const [timeCard,setTimeCard] = useState(props.autorisation?.timeCard)
-  const [satisfaction,setSatisfaction] = useState(props.autorisation?.satisfaction)
-  const [add,setAdd] = useState(props.autorisation?.add)
-  const [update,setUpdate] = useState(props.autorisation?.update)
-  const [remove,setRemove] = useState(props.autorisation?.remove)
-  const [permit,setPermit] = useState(props.autorisation?.permit)
-  const [block,setBlock] = useState(props.autorisation?.block)
+
+  const [user,setUser] = useState(autorisation?.user)
+  const [role,setRole] = useState(autorisation?.role)
+  const [company,setCompany] = useState(autorisation?.company)
+  const [timeCard,setTimeCard] = useState(autorisation?.timeCard)
+  const [satisfaction,setSatisfaction] = useState(autorisation?.satisfaction)
+  const [add,setAdd] = useState(autorisation?.add)
+  const [update,setUpdate] = useState(autorisation?.update)
+  const [remove,setRemove] = useState(autorisation?.remove)
+  const [permit,setPermit] = useState(autorisation?.permit)
+  const [block,setBlock] = useState(autorisation?.block)
 
 
  
-
+  const handlePermissions = () => {
+    const obj = {};
+    if (permission[0]?.autorisation[0] === "0") {
+      obj.user = false;
+    } else {
+      obj.user = true;
+    }
+    if (permission[0]?.autorisation[1] === "0") {
+      obj.role = false;
+    } else {
+      obj.role = true;
+    }
+    if (permission[0]?.autorisation[2] === "0") {
+      obj.company = false;
+    } else {
+      obj.company = true;
+    }
+    if (permission[0]?.autorisation[3] === "0") {
+      obj.timeCard = false;
+    } else {
+      obj.timeCard = true;
+    }
+    if (permission[0]?.autorisation[4] === "0") {
+      obj.satisfaction = false;
+    } else {
+      obj.satisfaction = true;
+    }
+    if (permission[0]?.autorisation[5] === "0") {
+      obj.add = false;
+    } else {
+      obj.add = true;
+    }
+    if (permission[0]?.autorisation[6] === "0") {
+      obj.update = false;
+    } else {
+      obj.update = true;
+    }
+    if (permission[0]?.autorisation[7] === "0") {
+      obj.remove = false;
+    } else {
+      obj.remove = true;
+    }
+    if (permission[0]?.autorisation[8] === "0") {
+      obj.permit = false;
+    } else {
+      obj.permit = true;
+    }
+    if (permission[0]?.autorisation[9] === "0") {
+      obj.block = false;
+    } else {
+      obj.block = true;
+    }
+    return obj
+  };
 
 
 
@@ -48,7 +103,8 @@ const Permission = (props) => {
 
  
 useEffect(()=>{
-  console.log(props.autorisation);
+  
+  setAutorisation(handlePermissions())
 },[])
 
   return (
