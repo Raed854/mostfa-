@@ -59,6 +59,7 @@ const Permission = (props) => {
 
   useEffect(()=>{
     fetchPermission(props.user.id)
+    handlePermissions()
   },[])
 
 
