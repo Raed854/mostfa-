@@ -74,6 +74,10 @@ const AllUsers = (props) => {
     setAutorisation(obj);
   };
 
+  useEffect(()=>{
+    
+  },[])
+
 
   return (
     <div className="allUsersContent">
