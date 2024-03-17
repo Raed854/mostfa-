@@ -4,18 +4,7 @@ import "./allUsers.css";
 import axios from "axios";
 
 const AllUsers = (props) => {
-  const [permission, setPermission] = useState([]);
 
-  const fetchPermission = async (id) => {
-    try {
-      const data = await axios.get(
-        `http://localhost:8000/miroir/api/user_autorisation/${id}/`
-      );
-      setPermission(data.data);
-    } catch (error) {
-      throw error;
-    }
-  };
 
 
 
@@ -41,7 +30,6 @@ const AllUsers = (props) => {
         </thead>
         <tbody>
           {props.users.map((user, index) => {
-            fetchPermission(user.id);
             return (
               <OneUser
                 user={user}
