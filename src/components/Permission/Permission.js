@@ -21,16 +21,16 @@ const style = {
 
 const Permission = (props) => {
 
-  const [user,setUser] = useState(props.autorisation.user)
-  const [role,setRole] = useState(props.autorisation.role)
-  const [company,setCompany] = useState(props.autorisation.company)
-  const [timeCard,setTimeCard] = useState(props.autorisation.timeCard)
-  const [satisfaction,setSatisfaction] = useState(props.autorisation.satisfaction)
-  const [add,setAdd] = useState(props.autorisation.add)
-  const [update,setUpdate] = useState(props.autorisation.update)
-  const [remove,setRemove] = useState(props.autorisation.remove)
-  const [permit,setPermit] = useState(props.autorisation.permit)
-  const [block,setBlock] = useState(props.autorisation.block)
+  const [user,setUser] = useState(props.autorisation?.user)
+  const [role,setRole] = useState(props.autorisation?.role)
+  const [company,setCompany] = useState(props.autorisation?.company)
+  const [timeCard,setTimeCard] = useState(props.autorisation?.timeCard)
+  const [satisfaction,setSatisfaction] = useState(props.autorisation?.satisfaction)
+  const [add,setAdd] = useState(props.autorisation?.add)
+  const [update,setUpdate] = useState(props.autorisation?.update)
+  const [remove,setRemove] = useState(props.autorisation?.remove)
+  const [permit,setPermit] = useState(props.autorisation?.permit)
+  const [block,setBlock] = useState(props.autorisation?.block)
 
 
  
