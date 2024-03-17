@@ -11,7 +11,7 @@ import Permission from '../Permission/Permission';
 const OneUser = (props) => {
   const [details,setDetails] = useState({})
   const [permission,setPermission] = useState([])
-  const autorisation = {}
+  let autorisation = {}
 
   const navigate = useNavigate()
   const [block,setBlocked] = useState(props.user.is_active)
