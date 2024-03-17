@@ -21,82 +21,19 @@ const style = {
 
 const Permission = (props) => {
 
-  const [user,setUser] = useState(false)
-  const [role,setRole] = useState(false)
-  const [company,setCompany] = useState(false)
-  const [timeCard,setTimeCard] = useState(false)
-  const [satisfaction,setSatisfaction] = useState(false)
-  const [add,setAdd] = useState(false)
-  const [update,setUpdate] = useState(false)
-  const [remove,setRemove] = useState(false)
-  const [permit,setPermit] = useState(false)
-  const [block,setBlock] = useState(false)
+  const [user,setUser] = useState(props.autorisation.user)
+  const [role,setRole] = useState(props.autorisation.role)
+  const [company,setCompany] = useState(props.autorisation.company)
+  const [timeCard,setTimeCard] = useState(props.autorisation.timeCard)
+  const [satisfaction,setSatisfaction] = useState(props.autorisation.satisfaction)
+  const [add,setAdd] = useState(props.autorisation.add)
+  const [update,setUpdate] = useState(props.autorisation.update)
+  const [remove,setRemove] = useState(props.autorisation.remove)
+  const [permit,setPermit] = useState(props.autorisation.permit)
+  const [block,setBlock] = useState(props.autorisation.block)
 
 
-  const handlePermissions = () =>{
-    if(props.permission[0]?.autorisation[0] === "0"){
-       setUser(false) 
-    }
-    else{
-      setUser(true)
-    }
-    if(props.permission[0]?.autorisation[1] === "0"){
-       setRole(false) 
-    }
-    else{
-      setRole(true)
-    }
-    if(props.permission[0]?.autorisation[2] === "0"){
-       setCompany(false) 
-    }
-    else{
-      setCompany(true)
-    }
-    if(props.permission[0]?.autorisation[3] === "0"){
-       setTimeCard(false) 
-    }
-    else{
-      setTimeCard(true)
-      setTimeCard(true)
-    }
-    if(props.permission[0]?.autorisation[4] === "0"){
-       setSatisfaction(false) 
-    }
-    else{
-      setSatisfaction(true)
-    }
-    if(props.permission[0]?.autorisation[5] === "0"){
-       setAdd(false) 
-    }
-    else{
-      setAdd(true)
-    }
-    if(props.permission[0]?.autorisation[6] === "0"){
-       setUpdate(false) 
-    }
-    else{
-      setUpdate(true)
-    }
-    if(props.permission[0]?.autorisation[7] === "0"){
-       setRemove(false) 
-    }
-    else{
-      setRemove(true)
-    }
-    if(props.permission[0]?.autorisation[8] === "0"){
-       setPermit(false) 
-    }
-    else{
-      setPermit(true)
-    }
-    if(props.permission[0]?.autorisation[9] === "0"){
-       setBlock(false) 
-    }
-    else{
-      setBlock(true)
-    }
-    
-  }
+ 
 
 
 
@@ -110,7 +47,7 @@ const Permission = (props) => {
   }
 
   useEffect(()=>{
-    handlePermissions()
+
   },[])
 
 
