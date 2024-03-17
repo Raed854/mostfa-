@@ -11,7 +11,7 @@ import Permission from '../Permission/Permission';
 const OneUser = (props) => {
   const [details,setDetails] = useState({})
   const [permission,setPermission] = useState([])
-  let autorisation = {}
+  const [autorisation,setAutorisation] = useState({})
 
   const navigate = useNavigate()
   const [block,setBlocked] = useState(props.user.is_active)
@@ -91,7 +91,7 @@ const OneUser = (props) => {
       obj.block = true
     }
     console.log(obj);
-    autorisation = obj
+    setAutorisation(obj)
   }
 
 
@@ -148,6 +148,7 @@ const OneUser = (props) => {
   useEffect(()=>{
     handleDetails(props.user.id)
     fetchPermission(props.user.id)
+    handlePermissions()
   },[props.relaod])
 
   return (
@@ -192,7 +193,6 @@ const OneUser = (props) => {
     <FontAwesomeIcon icon={faKey} className='lock' onClick={(e)=>{
       e.preventDefault()
       handleOpenPermission()
-      handlePermissions()
     }}  />
 
     </td>
