@@ -35,7 +35,67 @@ const Permission = (props) => {
 
 
   const handlePermissions = () =>{
-    console.log(permission);
+    if(permission[0].autorisation[0] === "0"){
+       setUser(false) 
+    }
+    else{
+      setUser(true)
+    }
+    if(permission[0].autorisation[1] === "0"){
+       setRole(false) 
+    }
+    else{
+      setRole(true)
+    }
+    if(permission[0].autorisation[2] === "0"){
+       setCompany(false) 
+    }
+    else{
+      setCompany(true)
+    }
+    if(permission[0].autorisation[3] === "0"){
+       timeCard(false) 
+    }
+    else{
+      timeCard(true)
+    }
+    if(permission[0].autorisation[4] === "0"){
+       setSatisfaction(false) 
+    }
+    else{
+      setSatisfaction(true)
+    }
+    if(permission[0].autorisation[5] === "0"){
+       setAdd(false) 
+    }
+    else{
+      setAdd(true)
+    }
+    if(permission[0].autorisation[6] === "0"){
+       setUpdate(false) 
+    }
+    else{
+      setUpdate(true)
+    }
+    if(permission[0].autorisation[7] === "0"){
+       setRemove(false) 
+    }
+    else{
+      setRemove(true)
+    }
+    if(permission[0].autorisation[8] === "0"){
+       setPermit(false) 
+    }
+    else{
+      setPermit(true)
+    }
+    if(permission[0].autorisation[9] === "0"){
+       setBlock(false) 
+    }
+    else{
+      setBlock(true)
+    }
+    
   }
 
 
@@ -84,45 +144,45 @@ const Permission = (props) => {
                 <div className='form-right'>
                     <div className='form-right-left'>
                         <div className='checkbox'>
-                            <input type="checkbox" className="ui-checkbox"  />
+                            <input type="checkbox" className="ui-checkbox" checked={user}  onChange={()=>setUser(!user)} />
                             <p>Show Users</p>
                         </div>
                         <div className='checkbox'>
-                            <input type="checkbox" className="ui-checkbox"/>
+                            <input type="checkbox" className="ui-checkbox" checked={role}  onChange={()=>setRole(!role)} />
                             <p>Show Role</p>
                         </div>
                         <div className='checkbox'>
-                            <input type="checkbox" className="ui-checkbox"/>
+                            <input type="checkbox" className="ui-checkbox" checked={company}  onChange={()=>setCompany(!company)} />
                             <p>Show Company</p>
                         </div>
                         <div className='checkbox'>
-                            <input type="checkbox" className="ui-checkbox"/>
+                            <input type="checkbox" className="ui-checkbox" checked={timeCard}  onChange={()=>setTimeCard(!timeCard)} />
                             <p>Show Time Card</p>
                         </div>
                         <div className='checkbox'>
-                            <input type="checkbox" className="ui-checkbox"/>
+                            <input type="checkbox" className="ui-checkbox" checked={satisfaction}  onChange={()=>setSatisfaction(!satisfaction)} />
                             <p>Show Satisfaction</p>
                         </div>
                     </div>
                     <div className='form-right-right'>
                         <div className='checkbox'>
-                            <input type="checkbox" className="ui-checkbox"/>
+                            <input type="checkbox" className="ui-checkbox" checked={add}  onChange={()=>setAdd(!add)} />
                             <p>Add Users</p>
                         </div>
                         <div className='checkbox'>
-                            <input type="checkbox" className="ui-checkbox"/>
+                            <input type="checkbox" className="ui-checkbox" checked={update}  onChange={()=>setUpdate(!update)} />
                             <p>Edit Users</p>
                         </div>
                         <div className='checkbox'>
-                            <input type="checkbox" className="ui-checkbox"/>
+                            <input type="checkbox" className="ui-checkbox" checked={remove}  onChange={()=>setRemove(!remove)} />
                             <p>Delete Users</p>
                         </div>
                         <div className='checkbox'>
-                            <input type="checkbox" className="ui-checkbox"/>
+                            <input type="checkbox" className="ui-checkbox" checked={permit}  onChange={()=>setPermit(!permit)} />
                             <p>Give Permission</p>
                         </div>
                         <div className='checkbox'>
-                            <input type="checkbox" className="ui-checkbox"/>
+                            <input type="checkbox" className="ui-checkbox" checked={block}  onChange={()=>setBlock(!block)} />
                             <p>Block Users</p>
                         </div>
                     </div>
