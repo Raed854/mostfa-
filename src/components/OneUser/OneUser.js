@@ -142,8 +142,10 @@ const OneUser = (props) => {
 
   useEffect(()=>{
     fetchPermission(props.user.id).then(()=>{
-      console.log(permission);
-      setAutorisation(handlePermissions())
+      while (permission) {
+        setAutorisation(handlePermissions())
+      }
+      
     })
     handleDetails(props.user.id)
   },[props.relaod])
