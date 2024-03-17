@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import OneUser from "../OneUser/OneUser";
 import "./allUsers.css";
+import axios from "axios";
 
 const AllUsers = (props) => {
   const [autorisation, setAutorisation] = useState({});
