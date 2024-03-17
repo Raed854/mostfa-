@@ -48,7 +48,7 @@ const Permission = (props) => {
 
  
 useEffect(()=>{
-  console.log(user,role,company);
+  console.log(props.autorisation && true);
 },[])
 
   return (
