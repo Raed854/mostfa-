@@ -21,7 +21,22 @@ const style = {
 
 const Permission = (props) => {
   const [permission,setPermission] = useState([])
-  const [check,setCheck] = useState(true)
+
+  const [user,setUser] = useState(false)
+  const [role,setRole] = useState(false)
+  const [company,setCompany] = useState(false)
+  const [timeCard,setTimeCard] = useState(false)
+  const [satisfaction,setSatisfaction] = useState(false)
+  const [add,setAdd] = useState(false)
+  const [update,setUpdate] = useState(false)
+  const [remove,setRemove] = useState(false)
+  const [permit,setPermit] = useState(false)
+  const [block,setBlock] = useState(false)
+
+
+  const handlePermissions = () =>{
+    console.log(permission);
+  }
 
 
   const fetchPermission = async (id) => {
@@ -68,46 +83,46 @@ const Permission = (props) => {
                 <div className='form-right'>
                     <div className='form-right-left'>
                         <div className='checkbox'>
-                            <input type="checkbox" className="ui-checkbox" checked={check} />
-                            <p>Users</p>
+                            <input type="checkbox" className="ui-checkbox"  />
+                            <p>Show Users</p>
                         </div>
                         <div className='checkbox'>
                             <input type="checkbox" className="ui-checkbox"/>
-                            <p>Role</p>
+                            <p>Show Role</p>
                         </div>
                         <div className='checkbox'>
                             <input type="checkbox" className="ui-checkbox"/>
-                            <p>Company</p>
+                            <p>Show Company</p>
                         </div>
                         <div className='checkbox'>
                             <input type="checkbox" className="ui-checkbox"/>
-                            <p>Time Card</p>
+                            <p>Show Time Card</p>
                         </div>
                         <div className='checkbox'>
                             <input type="checkbox" className="ui-checkbox"/>
-                            <p>Satisfaction</p>
+                            <p>Show Satisfaction</p>
                         </div>
                     </div>
                     <div className='form-right-right'>
                         <div className='checkbox'>
                             <input type="checkbox" className="ui-checkbox"/>
-                            <p>Add</p>
+                            <p>Add Users</p>
                         </div>
                         <div className='checkbox'>
                             <input type="checkbox" className="ui-checkbox"/>
-                            <p>Edit</p>
+                            <p>Edit Users</p>
                         </div>
                         <div className='checkbox'>
                             <input type="checkbox" className="ui-checkbox"/>
-                            <p>Delete</p>
+                            <p>Delete Users</p>
                         </div>
                         <div className='checkbox'>
                             <input type="checkbox" className="ui-checkbox"/>
-                            <p>Permission</p>
+                            <p>Give Permission</p>
                         </div>
                         <div className='checkbox'>
                             <input type="checkbox" className="ui-checkbox"/>
-                            <p>Blocking</p>
+                            <p>Block Users</p>
                         </div>
                     </div>
                 </div>
