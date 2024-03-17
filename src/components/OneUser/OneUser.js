@@ -10,6 +10,8 @@ import Permission from '../Permission/Permission';
 
 const OneUser = (props) => {
   const [details,setDetails] = useState({})
+  const [autorisation, setAutorisation] = useState({});
+
 
   const navigate = useNavigate()
   const [block,setBlocked] = useState(props.user.is_active)
@@ -71,6 +73,62 @@ const OneUser = (props) => {
     }
   }
 
+  const handlePermissions = () => {
+    const obj = {};
+    if (props.permission[0]?.autorisation[0] === "0") {
+      obj.user = false;
+    } else {
+      obj.user = true;
+    }
+    if (props.permission[0]?.autorisation[1] === "0") {
+      obj.role = false;
+    } else {
+      obj.role = true;
+    }
+    if (props.permission[0]?.autorisation[2] === "0") {
+      obj.company = false;
+    } else {
+      obj.company = true;
+    }
+    if (props.permission[0]?.autorisation[3] === "0") {
+      obj.timeCard = false;
+    } else {
+      obj.timeCard = true;
+    }
+    if (props.permission[0]?.autorisation[4] === "0") {
+      obj.satisfaction = false;
+    } else {
+      obj.satisfaction = true;
+    }
+    if (props.permission[0]?.autorisation[5] === "0") {
+      obj.add = false;
+    } else {
+      obj.add = true;
+    }
+    if (props.permission[0]?.autorisation[6] === "0") {
+      obj.update = false;
+    } else {
+      obj.update = true;
+    }
+    if (props.permission[0]?.autorisation[7] === "0") {
+      obj.remove = false;
+    } else {
+      obj.remove = true;
+    }
+    if (props.permission[0]?.autorisation[8] === "0") {
+      obj.permit = false;
+    } else {
+      obj.permit = true;
+    }
+    if (props.permission[0]?.autorisation[9] === "0") {
+      obj.block = false;
+    } else {
+      obj.block = true;
+    }
+    console.log(obj);
+    setAutorisation(obj);
+  };
+
   useEffect(()=>{
     handleDetails(props.user.id)
   },[props.relaod])
@@ -123,7 +181,7 @@ const OneUser = (props) => {
 
     <UpdateModal open={open} handleCloseUpdate={handleCloseUpdate} user={props.user}  handleUpdate={handleUpdate} />
     <DeleteModal open={openDelete} handleClose={handleCloseDelete} user={props.user} handleDelete={handleDelete} />
-    <Permission open={openPermission} handleClose={handleClosePermission} user={props.user} autorisation={props.autorisation} />
+    <Permission open={openPermission} handleClose={handleClosePermission} user={props.user} autorisation={autorisation} />
   </tr>
    
   )
