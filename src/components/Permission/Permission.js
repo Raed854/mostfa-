@@ -103,8 +103,7 @@ const Permission = (props) => {
 
  
 useEffect(()=>{
-  
-  setAutorisation(handlePermissions())
+  console.log(props.permission);
 },[])
 
   return (
