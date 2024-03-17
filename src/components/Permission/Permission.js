@@ -57,6 +57,7 @@ const Permission = (props) => {
     }
     else{
       setTimeCard(true)
+      setTimeCard(true)
     }
     if(props.permission[0]?.autorisation[4] === "0"){
        setSatisfaction(false) 
