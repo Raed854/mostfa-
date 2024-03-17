@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, {  useState } from 'react'
 import "./permission.css"
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -46,9 +46,7 @@ const Permission = (props) => {
     }
   }
 
-  useEffect(()=>{
-    console.log(props.autorisation);
-  },[])
+ 
 
 
   return (
