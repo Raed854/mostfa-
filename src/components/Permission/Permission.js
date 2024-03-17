@@ -20,7 +20,6 @@ const style = {
   };
 
 const Permission = (props) => {
-  const [permission,setPermission] = useState([])
 
   const [user,setUser] = useState(false)
   const [role,setRole] = useState(false)
@@ -35,61 +34,61 @@ const Permission = (props) => {
 
 
   const handlePermissions = () =>{
-    if(permission[0].autorisation[0] === "0"){
+    if(props.permission[0]?.autorisation[0] === "0"){
        setUser(false) 
     }
     else{
       setUser(true)
     }
-    if(permission[0].autorisation[1] === "0"){
+    if(props.permission[0]?.autorisation[1] === "0"){
        setRole(false) 
     }
     else{
       setRole(true)
     }
-    if(permission[0].autorisation[2] === "0"){
+    if(props.permission[0]?.autorisation[2] === "0"){
        setCompany(false) 
     }
     else{
       setCompany(true)
     }
-    if(permission[0].autorisation[3] === "0"){
-       timeCard(false) 
+    if(props.permission[0]?.autorisation[3] === "0"){
+       setTimeCard(false) 
     }
     else{
-      timeCard(true)
+      setTimeCard(true)
     }
-    if(permission[0].autorisation[4] === "0"){
+    if(props.permission[0]?.autorisation[4] === "0"){
        setSatisfaction(false) 
     }
     else{
       setSatisfaction(true)
     }
-    if(permission[0].autorisation[5] === "0"){
+    if(props.permission[0]?.autorisation[5] === "0"){
        setAdd(false) 
     }
     else{
       setAdd(true)
     }
-    if(permission[0].autorisation[6] === "0"){
+    if(props.permission[0]?.autorisation[6] === "0"){
        setUpdate(false) 
     }
     else{
       setUpdate(true)
     }
-    if(permission[0].autorisation[7] === "0"){
+    if(props.permission[0]?.autorisation[7] === "0"){
        setRemove(false) 
     }
     else{
       setRemove(true)
     }
-    if(permission[0].autorisation[8] === "0"){
+    if(props.permission[0]?.autorisation[8] === "0"){
        setPermit(false) 
     }
     else{
       setPermit(true)
     }
-    if(permission[0].autorisation[9] === "0"){
+    if(props.permission[0]?.autorisation[9] === "0"){
        setBlock(false) 
     }
     else{
@@ -99,15 +98,7 @@ const Permission = (props) => {
   }
 
 
-  const fetchPermission = async (id) => {
-    try {
-      const data = await axios.get(`http://localhost:8000/miroir/api/user_autorisation/${id}/`)
-      setPermission(data.data)
-      console.log(data.data);
-    } catch (error) {
-      throw error
-    }
-  }
+
 
   const handleUpdate = async (id)=>{
     try {
@@ -118,7 +109,6 @@ const Permission = (props) => {
   }
 
   useEffect(()=>{
-    fetchPermission(props.user.id)
     handlePermissions()
   },[])
 

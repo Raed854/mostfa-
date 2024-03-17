@@ -10,6 +10,8 @@ import Permission from '../Permission/Permission';
 
 const OneUser = (props) => {
   const [details,setDetails] = useState({})
+  const [permission,setPermission] = useState([])
+
   const navigate = useNavigate()
   const [block,setBlocked] = useState(props.user.is_active)
   const [openDelete,setOpenDelete] = React.useState(false);
@@ -42,6 +44,15 @@ const OneUser = (props) => {
       throw error
     }
   }
+  const fetchPermission = async (id) => {
+    try {
+      const data = await axios.get(`http://localhost:8000/miroir/api/user_autorisation/${id}/`)
+      setPermission(data.data)
+      console.log(data.data);
+    } catch (error) {
+      throw error
+    }
+  }
   const handleDelete= async (id)=>{
     try {
       await axios.delete(`http://localhost:8000/miroir/api/users/${id}/delete/`)
@@ -65,6 +76,7 @@ const OneUser = (props) => {
 
   useEffect(()=>{
     handleDetails(props.user.id)
+    fetchPermission(props.user.id)
   },[props.relaod])
 
   return (
@@ -112,7 +124,7 @@ const OneUser = (props) => {
 
     <UpdateModal open={open} handleCloseUpdate={handleCloseUpdate} user={props.user}  handleUpdate={handleUpdate} />
     <DeleteModal open={openDelete} handleClose={handleCloseDelete} user={props.user} handleDelete={handleDelete} />
-    <Permission open={openPermission} handleClose={handleClosePermission} user={props.user} />
+    <Permission open={openPermission} handleClose={handleClosePermission} user={props.user} permission={permission} />
   </tr>
    
   )
