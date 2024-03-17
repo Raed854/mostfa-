@@ -13,7 +13,6 @@ const AllUsers = (props) => {
         `http://localhost:8000/miroir/api/user_autorisation/${id}/`
       );
       setPermission(data.data);
-      console.log(data.data);
     } catch (error) {
       throw error;
     }
@@ -74,6 +73,8 @@ const AllUsers = (props) => {
     console.log(obj);
     setAutorisation(obj);
   };
+
+
   return (
     <div className="allUsersContent">
       <table className="table">
